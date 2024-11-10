@@ -71,3 +71,9 @@ class ProjectHelper:
                 index].click()
             wd.find_element_by_xpath("//input[@value='Delete Project']").click()
             wd.find_element_by_xpath("//input[@value='Delete Project']").click()
+
+    def convert_to_project(self, project_data):
+        return Project(id=project_data.id, name=project_data.name, status=project_data.status.name,
+                       view_status=project_data.view_state.name,
+                       description=project_data.description
+                       )
